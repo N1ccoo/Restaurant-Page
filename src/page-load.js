@@ -1,30 +1,30 @@
+import create from "./dom";
+// let item = create({type:'div', css:['link-container','header'], attr:{href: '#'}, text:'This is my creation.'})
+// type, css[], attr{}, text
+
 const initialLoad = () => {
    createNavBar();
 }
 
 function createNavBar() {
-    const header = document.createElement('header');
-    const ul = document.createElement('ul');
+    let header = create({type:'header'});
+    let nav = create({type:'nav'});
+    let ul = create({type:'ul', css:['nav-links']});
+    let li1 = create({type:'li'});
+    let li2 = create({type:'li'});
+    let li3 = create({type:'li'});
+    let link1 = create({type:'a', attr:{href:'#'}, text:'Home'});
+    let link2 = create({type:'a', attr:{href:'#'}, text:'Menu'});
+    let link3 = create({type:'a', attr:{href:'#'}, text:'Contact'});
 
-    header.classList.add('nav-bar');
-    ul.classList.add('nav-links');
-
-    header.append(ul);
     document.body.append(header);
-    createNavLinks('home',ul);
-    createNavLinks('menu',ul);
-    createNavLinks('contact',ul);
-}
+    header.append(nav);
+    nav.append(ul);
+    ul.append(li1,li2,li3);
 
-function createNavLinks(text,container) {
-    const li = document.createElement('li');
-    const links = document.createElement('a');
-
-    links.setAttribute('href','#');
-    links.textContent = text;
-    li.append(links);
-
-    container.append(li);
+    li1.append(link1);
+    li2.append(link2);
+    li3.append(link3);
 }
 
 

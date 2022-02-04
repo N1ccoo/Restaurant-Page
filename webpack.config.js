@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanPlugin } = require('webpack');
 
 module.exports = {
+    devtool: 'eval',
     mode: 'production',
     entry: './src/index.js',
     output: { 
