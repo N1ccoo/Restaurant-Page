@@ -8,6 +8,7 @@ const initialLoad = () => {
    createHero();
    createContent();
    createContent();
+   createFooter();
 }
 
 function createNavBar() {
@@ -41,12 +42,15 @@ function createHero() {
     let heroContainer = create({type:'div',css:['hero-container']});
     let heroText = create({type:'div',css:['hero-text']});
     let heroImage = create({type:'div',css:['hero-image']});
-        let paragraph1 = create({type:'p',css:['hero-card'],text:'To Burger, or not to Burger?'});
-
+        let h1 = create({type:'h1',text:'To Burger, or not to Burger?'})
+        let p1 = create({type:'p',text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et hendrerit magna. Donec faucibus, nulla in facilisis laoreet, arcu sapien aliquam risus, ac pretium dui lacus ac leo. Sed tincidunt, quam sed facilisis congue.'});
+        
     document.body.append(heroContainer);
        
         heroContainer.append(heroImage);
-            heroText.append(paragraph1);
+            heroImage.append(heroText)
+            heroText.append(h1,p1);
+            
         
 }
 
@@ -60,6 +64,18 @@ function createContent() {
         contentContainer.append(h1, text);
 }
 
+function createFooter() {
+    let footer = create({type:'footer',attr:{id:'footer'}});
+    let p = create({type:'p',css:['blue-text'],text:'Copyright © 2021 N1ccoo'});
+    let link = create({type:'a', attr:{href:'https://github.com/N1ccoo'}});
+    let button = create({type:'button',css:['blue-text'],text:'GITHUB'});
+    
+
+
+    document.body.append(footer);
+        footer.append(p,link);
+          link.append(button);
+}
 
 
 
