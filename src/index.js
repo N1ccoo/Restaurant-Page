@@ -11,7 +11,7 @@ const navEvents = () => {
     contact.addEventListener('click', loadContactPage);
 };
 
-loadContactPage() // main load
+loadHomePage() // main load
 
 function loadHomePage() {
     homePage()
